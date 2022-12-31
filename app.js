@@ -16,8 +16,13 @@ function createSquareOfDivs(side) {
             div.style.cssText = "border: 1px solid black; height: 25px; width: 25px";
         }
 
+        div.addEventListener('mouseover', (e) => {
+            e.target.style.backgroundColor = 'black';
+            setTimeout(() => {
+                e.target.style.backgroundColor = 'white';
+            }, 1000);
+        });
         container.appendChild(div);
     }
 }
-
 createSquareOfDivs(16);
