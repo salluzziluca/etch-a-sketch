@@ -6,6 +6,8 @@ const container = document.getElementById('container');
  * pasa a la proxima filas
  */
 function createSquareOfDivs(side) {
+    const totalSpaceOcupied = 16 * 16 * 25 * 25;
+    const sideOfDiv = Math.sqrt(totalSpaceOcupied / (side * side));
     const total = (side * side) + side;
     const modificado = side + 1;
     for (let i = 1; i < total; i++) {
@@ -13,7 +15,8 @@ function createSquareOfDivs(side) {
         if (i % modificado === 0) {
             div.style.cssText = "border: 0; height: 0; width: 100%";
         } else {
-            div.style.cssText = "border: 1px solid black; height: 25px; width: 25px";
+            let estilo = `border: 1px solid black; height: ${sideOfDiv}px; width: ${sideOfDiv}px;`;
+            div.style.cssText = estilo;
         }
 
         div.addEventListener('mouseover', (e) => {
