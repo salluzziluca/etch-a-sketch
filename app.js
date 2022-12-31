@@ -18,11 +18,16 @@ function createSquareOfDivs(side) {
 
         div.addEventListener('mouseover', (e) => {
             e.target.style.backgroundColor = 'black';
-            setTimeout(() => {
-                e.target.style.backgroundColor = 'white';
-            }, 1000);
+
         });
         container.appendChild(div);
     }
 }
 createSquareOfDivs(16);
+
+const resetButton = document.getElementById('reset-btn');
+resetButton.addEventListener('click', () => {
+    let squares = parseInt(prompt('How many squares per side?'));
+    container.innerHTML = '';
+    createSquareOfDivs(squares);
+});
