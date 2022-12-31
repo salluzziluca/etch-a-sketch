@@ -1,4 +1,4 @@
-const container = document.getElementById('container');
+const container = document.getElementById('sketch-container');
 
 /**
  * Crea una matriz de divs de side * side
